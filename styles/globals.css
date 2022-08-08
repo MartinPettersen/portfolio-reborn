@@ -83,13 +83,11 @@ a {
 }
 
 .footerGroup {
-  margin-left: 0.1rem;
-  margin-right: 0.1rem;
+
   display: flex;
   flex-direction: column;
   padding: 0.7rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+
   font-size: 1rem;
   color: white;
 }
