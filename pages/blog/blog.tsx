@@ -33,7 +33,6 @@ export async function getStaticProps() {
     );
 
     const { data: blogData, content } = matter(markdown);
-    console.log(blogData);
     return {
       slug,
       blogData,
@@ -49,7 +48,6 @@ export async function getStaticProps() {
 }
 
 const Blog: NextPage<IPosts> = ({ posts }) => {
-
   return (
     <div className={styles.container}>
       <Head>
@@ -63,7 +61,7 @@ const Blog: NextPage<IPosts> = ({ posts }) => {
         </h3>
         <div className="blogContainer">
           {posts.map((post, index) => (
-            <BlogCard key={index} post={post}/>
+            <BlogCard key={index} post={post} />
           ))}
         </div>
       </main>
