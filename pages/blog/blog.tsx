@@ -49,20 +49,7 @@ export async function getStaticProps() {
 }
 
 const Blog: NextPage<IPosts> = ({ posts }) => {
-  //console.log(posts);
-  console.log(posts[0].blogData.title);
-  console.log(posts[0].content);
-  const postAmount = posts.length;
-  const [upper, setUpper] = useState(4);
-  const [lower, setLower] = useState(0);
 
-  useEffect(()=> {
-    if(upper > postAmount) {
-      setUpper(postAmount);
-    } 
-  }, []);
-
-  console.log();
   return (
     <div className={styles.container}>
       <Head>

@@ -107,11 +107,75 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.buttonZoneLeft{
+  padding: 2rem;
 
+}
+
+.buttonZoneRight{
+  padding: 2rem;
+  opacity: 100%;
+  transition: opacity 1s;
+}
+.buttonZoneRight:hover {
+  padding: 2rem;
+  opacity: 0%;
+  transition: opacity 0.3s;
+}
+
+.yesButton {
+  background-color: #171717;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  border: 4px solid #202124;
+}
+
+.noButton {
+  background-color: #171717;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  border: 4px solid #202124;
+}
+
+.question {
+  text-align: center;
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+.message {
+  text-align: center;
+  margin: 4rem;
+  padding: 4.4rem;
+
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .buttonWrapper {
+    display: none;
+  }
+  .question {
+    display: none;
+  }
+  .message {
+    opacity: 0%;
   }
 }
 
