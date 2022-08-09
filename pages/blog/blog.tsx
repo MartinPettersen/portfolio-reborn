@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import { sortByDate } from "../../utils";
 import { marked } from "marked";
 import BlogCard from "../../components/BlogCard";
+import { useEffect, useState } from "react";
 
 interface IPost {
   slug: string;
@@ -51,7 +52,17 @@ const Blog: NextPage<IPosts> = ({ posts }) => {
   //console.log(posts);
   console.log(posts[0].blogData.title);
   console.log(posts[0].content);
+  const postAmount = posts.length;
+  const [upper, setUpper] = useState(4);
+  const [lower, setLower] = useState(0);
 
+  useEffect(()=> {
+    if(upper > postAmount) {
+      setUpper(postAmount);
+    } 
+  }, []);
+
+  console.log();
   return (
     <div className={styles.container}>
       <Head>
@@ -61,7 +72,7 @@ const Blog: NextPage<IPosts> = ({ posts }) => {
 
       <main className={styles.main}>
         <h3 className={styles.title}>
-          One day something will be written here:
+          One day something good will be written here
         </h3>
         <div className="blogContainer">
           {posts.map((post, index) => (
