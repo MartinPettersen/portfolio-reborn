@@ -31,6 +31,10 @@
 
 }
 
+.orange {
+    color: orange;
+}
+
 @media (max-width: 600px) {
     .card {
         color: #9fcafc;
