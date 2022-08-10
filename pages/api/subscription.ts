@@ -5,7 +5,7 @@ type Data = {
   status: string;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -32,7 +32,7 @@ export default function handler(
     text: "Thank you for subscribing to my blog",
   };
 
-  transporter.sendMail(mailOptions, function (error: any, res: any) {
+  await transporter.sendMail(mailOptions, function (error: any, res: any) {
     if (error) {
       console.log(error);
     } else {
