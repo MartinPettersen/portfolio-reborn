@@ -9,6 +9,7 @@ import { sortByDate } from "../../utils";
 import { marked } from "marked";
 import BlogCard from "../../components/BlogCard";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface IPost {
   slug: string;
@@ -48,6 +49,18 @@ export async function getStaticProps() {
 }
 
 const Blog: NextPage<IPosts> = ({ posts }) => {
+  const handleClick = () => {
+    const windowFeatures = "left=100,top=100,width=320,height=320";
+    const handle = window.open(
+      "http://localhost:3000/blog/subscriptionPage",
+      "subscriptionwindow",
+      windowFeatures
+    );
+
+    //const input = { text: "matchNewline@gmail.com" };
+    //axios.post("/api/subscription", input).then((res) => console.log(res.data));
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -59,6 +72,7 @@ const Blog: NextPage<IPosts> = ({ posts }) => {
         <h3 className={styles.title}>
           One day something good will be written here
         </h3>
+        <button onClick={handleClick}>Subscribe</button>
         <div className="blogContainer">
           {posts.map((post, index) => (
             <BlogCard key={index} post={post} />
