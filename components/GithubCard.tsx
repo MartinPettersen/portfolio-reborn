@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "../styles/blog.module.css";
+import styles from "../styles/GithubCard.module.css";
 import type { NextPage } from "next";
 import { marked } from "marked";
 import Link from "next/link";
