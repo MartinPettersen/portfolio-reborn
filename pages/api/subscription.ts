@@ -11,7 +11,7 @@ export default function handler(
 ) {
     const test = req.body.text;
     console.log("'''''");
-    console.log(test);
+    console.log(process.env.EMAIL);
     console.log("'''''");
 
   const transporter = nodemailer.createTransport({
