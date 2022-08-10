@@ -52,7 +52,7 @@ const Blog: NextPage<IPosts> = ({ posts }) => {
   const handleClick = () => {
     const windowFeatures = "left=100,top=100,width=320,height=320";
     const handle = window.open(
-      "http://localhost:3000/blog/subscriptionPage",
+      "https://www.martincodeportfolio.com/blog/subscriptionPage",
       "subscriptionwindow",
       windowFeatures
     );
