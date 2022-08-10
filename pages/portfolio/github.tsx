@@ -15,21 +15,21 @@ export const getServerSideProps = async () => {
   );
 
   const repositorieList:any = [];
-  data.data.map(async (repositorie: any) => {
-    const languages = await Axios.get(repositorie.languages_url);
-    const readme = await Axios.get(repositorie.url + "/contents/README.md");
+  await data.data.map(async (repositorie: any) => {
+    // const languages = await Axios.get(repositorie.languages_url);
+    // const readme = await Axios.get(repositorie.url + "/contents/README.md");
     repositorieList.push({
       name: repositorie.name,
       htmlUrl: repositorie.html_url,
-      languages,
-      readme,
+      // languages,
+      // readme,
     });
   });
   console.log(repositorieList);
   return {
     props: {
-      repositories: data.data,
-      repList: repositorieList,
+      repositories: await data.data,
+      repList: await repositorieList,
     },
   };
 };
