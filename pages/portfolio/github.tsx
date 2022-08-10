@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Axios from "axios";
+import GithubCard from '../../components/GithubCard';
 
 
 export const getServerSideProps = async () => {
@@ -50,7 +51,7 @@ const Github: NextPage = ({ repositories, repList }: any) => {
           All my public Projects on Github:
         </h3>
         {repositories.map((repositorie: any, i: any) => (
-          <h2 key={i}>Repositorie: {repositorie.name}</h2>
+          <GithubCard key={i}repository={repositorie}/>
       ))}
       </main>
 

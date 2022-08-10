@@ -1,0 +1,39 @@
+.card {
+    color: black;
+    background-color: white;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    border: 1px solid #9fcafc;
+    border-radius: 10px;
+    width: 100vh;
+}
+
+.container {
+    display: flex;
+}
+.techItem {
+    padding-right: 3px;
+}
+.linkButton {
+    border: 1px solid black;
+    background-color: #1A5FB4;
+    color: white;
+    padding: 0.3rem 1rem;
+    margin-right: 0.2rem;
+}
+
+@media (max-width: 600px) {
+    .card {
+        color: #9fcafc;
+        background-color: #1A5FB4;
+        margin: 1rem;
+        padding: 1.5rem;
+        color: inherit;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 50vh;
+    
+    }
+  }
