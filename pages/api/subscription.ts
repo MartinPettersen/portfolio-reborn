@@ -38,10 +38,11 @@ export default async function handler(
       console.log(error);
     } else {
       console.log("Email sent" + res.response);
+      res.status(200).json({ status: "email sent" });
     }
   });
+
   console.log("3");
-  setTimeout(() => {
-    res.status(200).json({ status: "email sent" });
-  }, 5000);
+  //setTimeout(() => {
+  //}, 5000);
 }
