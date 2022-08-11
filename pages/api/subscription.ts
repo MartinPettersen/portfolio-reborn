@@ -33,14 +33,13 @@ export default async function handler(
   };
   console.log("2");
 
-  await transporter.sendMail(mailOptions, function (error: any, res: any) {
+  transporter.sendMail(mailOptions, function (error: any, res: any) {
     if (error) {
       console.log(error);
     } else {
       console.log("Email sent" + res.response);
     }
-  })
-  .then(() => res.status(200).json({ status: "email sent" }));
+  }).then(() => res.status(200).json({ status: "email sent" }));
   console.log("3");
 
   //res.status(200).json({ status: "email sent" });
