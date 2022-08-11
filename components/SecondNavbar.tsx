@@ -46,7 +46,7 @@ const SecondNavbar = () => {
                   : "secondNavButton"
               }
             >
-              About Website
+              About Me
             </a>
           </Link>
           <Link href="/about/aboutMe">
@@ -57,7 +57,7 @@ const SecondNavbar = () => {
                   : "secondNavButton"
               }
             >
-              About Me
+              Tech
             </a>
           </Link>
         </>
