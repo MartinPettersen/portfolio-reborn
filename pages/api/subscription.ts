@@ -41,7 +41,7 @@ export default async function handler(
       res.status(200).json({ status: "email sent" });
     }
   });
-//  console.log("3");
-//  setTimeout(() => {
-//  }, 5000);
+  console.log("3");
+  setTimeout(() => {
+  }, 5000);
 }
