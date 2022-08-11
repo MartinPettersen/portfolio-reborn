@@ -39,8 +39,9 @@ export default async function handler(
     } else {
       console.log("Email sent" + res.response);
     }
-  });
+  })
+  .then(() => res.status(200).json({ status: "email sent" }));
   console.log("3");
 
-  res.status(200).json({ status: "email sent" });
+  //res.status(200).json({ status: "email sent" });
 }
