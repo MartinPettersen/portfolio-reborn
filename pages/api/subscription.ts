@@ -9,12 +9,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-    const test = req.body.text;
-    console.log("'''''");
-    console.log(process.env.EMAIL);
-    console.log(process.env.HOST);
+  const test = req.body.text;
+  console.log("'''''");
+  console.log(process.env.EMAIL);
+  console.log(process.env.HOST);
 
-    console.log("'''''");
+  console.log("'''''");
 
   const transporter = await nodemailer.createTransport({
     host: process.env.HOST,
@@ -33,14 +33,15 @@ export default async function handler(
   };
   console.log("2");
 
-  transporter.sendMail(mailOptions, function (error: any, res: any) {
+  await transporter.sendMail(mailOptions, function (error: any, res: any) {
     if (error) {
       console.log(error);
     } else {
       console.log("Email sent" + res.response);
     }
-  }).then(() => res.status(200).json({ status: "email sent" }));
+  });
   console.log("3");
-
-  //res.status(200).json({ status: "email sent" });
+  setTimeout(() => {
+    res.status(200).json({ status: "email sent" });
+  }, 5000);
 }
