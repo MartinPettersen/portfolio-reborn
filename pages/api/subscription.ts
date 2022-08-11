@@ -24,13 +24,14 @@ export default async function handler(
       pass: process.env.MAILPASSWORD,
     },
   });
-
+  console.log("1");
   const mailOptions = {
     from: process.env.EMAIL,
     to: "new_mp@hotmail.com",
     subject: "Confirming Subscription",
     text: "Thank you for subscribing to my blog",
   };
+  console.log("2");
 
   await transporter.sendMail(mailOptions, function (error: any, res: any) {
     if (error) {
@@ -39,6 +40,7 @@ export default async function handler(
       console.log("Email sent" + res.response);
     }
   });
+  console.log("3");
 
   res.status(200).json({ status: "email sent" });
 }
