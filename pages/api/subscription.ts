@@ -36,12 +36,13 @@ export default async function handler(
   await transporter.sendMail(mailOptions, function (error: any, res: any) {
     if (error) {
       console.log(error);
+      res.status(428).json({ status: "Subscription Failed" });
     } else {
       console.log("Email sent" + res.response);
+      res.status(200).json({ status: "Subscription successful. If you can't see the email check your spam filter" });
     }
   });
-  console.log("3");
-  setTimeout(() => {
-    res.status(200).json({ status: "email sent" });
-  }, 5000);
+//  console.log("3");
+//  setTimeout(() => {
+//  }, 5000);
 }

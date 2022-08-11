@@ -13,12 +13,13 @@ import axios from "axios";
 
 const Blog: NextPage = () => {
   const [userEmail, setUserEmail] = useState("");
+  const [feedback, setFeedback] = useState("Subscribe to get an Email whenever I post something new");
 
   const handleClick = () => {
     const windowFeatures = "left=400,top=400,width=800,height=800";
 
     const input = { text: userEmail };
-    axios.post("/api/subscription", input).then((res) => console.log(res.data));
+    axios.post("/api/subscription", input).then((res) => setFeedback(res.data.status));
   };
 
   return (
@@ -30,7 +31,7 @@ const Blog: NextPage = () => {
 
       <main className={styles.main}>
         <h3 className={styles.title}>
-          Subscribe to get an Email whenever I post something new
+          {feedback}
         </h3>
         <input type="text" placeholder="email"
           name="email"  onChange={e=>setUserEmail(e.target.value)}/>
