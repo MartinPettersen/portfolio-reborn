@@ -11,8 +11,7 @@ export default async function handler(
 ) {
   const test = req.body.text;
   console.log("'''''");
-  console.log(process.env.EMAIL);
-  console.log(process.env.HOST);
+  console.log(test);
 
   console.log("'''''");
 
