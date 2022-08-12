@@ -9,9 +9,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const test = req.body.text;
+  const userEmail = req.body.text;
   console.log("'''''");
-  console.log(test);
+  console.log(userEmail);
 
   console.log("'''''");
 
@@ -26,9 +26,9 @@ export default async function handler(
   console.log("1");
   const mailOptions = {
     from: process.env.EMAIL,
-    to: "new_mp@hotmail.com",
+    to: userEmail,
     subject: "Confirming Subscription",
-    text: "Thank you for subscribing to my blog",
+    text: "Thank you for subscribing to my blog, Just a test btw and not an actual subscription",
   };
   console.log("2");
 
