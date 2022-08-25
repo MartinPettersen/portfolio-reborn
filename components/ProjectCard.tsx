@@ -9,12 +9,13 @@ interface IProject {
   slug: string;
   projectData: {
     [key: string]: any;
+    title: string;
+    description: string;
+    githublink: string;
+    hostlink: string;
+    tech: Array<string>;
   };
   content: string;
-}
-
-interface IProjectCard {
-  props: { project: IProject };
 }
 
 const ProjectCard = (props: { project: IProject }) => {
@@ -23,7 +24,7 @@ const ProjectCard = (props: { project: IProject }) => {
     <div className={styles.card}>
       <h2>{project.projectData.title}</h2>
       <h3>{project.projectData.description}</h3>
-      <Link  href={project.projectData.githublink}>
+      <Link href={project.projectData.githublink}>
         <a className={styles.linkButton}>Github link</a>
       </Link>
       {project.projectData.hostlink !== "none" ? (
@@ -36,7 +37,11 @@ const ProjectCard = (props: { project: IProject }) => {
       <div className={styles.container}>
         <p>Tech used: &#8192;</p>
         {project.projectData.tech.map((tech: string, index: any) => {
-          return <p className={styles.techItem} key={index}>&#8192;{tech},</p>;
+          return (
+            <p className={styles.techItem} key={index}>
+              &#8192;{tech},
+            </p>
+          );
         })}
       </div>
       <div dangerouslySetInnerHTML={{ __html: marked(project.content) }}></div>

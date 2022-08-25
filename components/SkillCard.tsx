@@ -6,7 +6,7 @@ const SkillCard = (props: {skills: string[] })=> {
   return (
     <div>
         <div className={styles.text}>
-              {skills.map((skill: string, index: any) => (
+              {skills.map((skill: string, index: number) => (
                 <p key={index}>{skill}</p>
           ))}
               </div>

@@ -36,6 +36,7 @@ export default async function handler(
     if (error) {
       console.log(error);
     } else {
+      console.log(res);
       console.log("Email sent" + res.response);
       res.status(200).json({ status: "email sent" });
     }
